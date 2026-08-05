@@ -141,6 +141,53 @@ or unchallengeable.
     independent child—not time spent, messages sent, or emotional attachment to
     the assistant.
 
+## Make the permitted world feel enormous
+
+The product will be judged as much by what it enables as by what it blocks.
+Even a text-only, offline MVP can let a child:
+
+- ask strange “what if?” questions and follow unexpected connections;
+- invent stories, creatures, games, languages, and imaginary places;
+- compare perspectives and notice where an answer is uncertain;
+- plan a physical build, observation, interview, or creative project;
+- turn a permitted interest into questions they can investigate;
+- debate an idea with a respectful counter-position;
+- explore the history and human consequences of inventions;
+- practise explaining previous learning in their own words;
+- move between languages where the language-specific policy is validated; and
+- make something for another person rather than only consume an answer.
+
+Possible child-chosen session modes include **Explore**, **Create**, **Question**,
+**Debate**, **Build Offline**, and **Review Previous Learning**. Modes are
+promises about interaction style, not routes around policy. Every prompt and
+candidate response still follows the same pipeline.
+
+The interface should favour questions, connections, and making over answer
+volume. A rich permitted experience also matters for safety: children are less
+likely to treat boundaries as adversaries when the rest of the environment
+remains genuinely rewarding.
+
+### AI literacy is part of the wonder
+
+Children should learn to use AI without learning to defer to it. Age-adapted
+experiences can demonstrate that:
+
+- fluent answers can be wrong;
+- uncertainty should be stated and claims may need checking;
+- training data can contain gaps and bias;
+- different prompts can change an answer without changing the truth;
+- generated characters are not conscious friends or authorities;
+- private information should not be entered merely to improve personalisation;
+- brainstorming, explanation, and evidence are different things; and
+- some decisions belong with the child, trusted people, or qualified
+  professionals rather than a model.
+
+Useful activities could ask a child to compare two safe answers, find an
+unsupported claim in curated content, improve a question, identify a missing
+perspective, or decide when not to use AI. These activities should use
+pre-validated local material so that “learning about hallucinations” does not
+require exposing the child to arbitrary unsafe output.
+
 ## Make a boundary feel like a doorway
 
 ### A “never dead-end” response contract
