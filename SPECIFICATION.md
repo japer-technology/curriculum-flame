@@ -86,6 +86,7 @@ The MVP MUST provide:
 | Interaction | Text-only local chat |
 | Inference | Local model inference |
 | Enforcement | Prompt classification, deterministic policy decisions, and output leakage validation |
+| Assessment protection | Guardian-entered protected text, exact and paraphrase matching, and temporary protection periods |
 | Controls | Guardian curriculum management, temporary approvals, and session suspension |
 | Escalation | Three child-facing warning variants, structured events, and a local guardian dashboard |
 | Connectivity | Fully usable with network egress disabled |
@@ -383,7 +384,7 @@ background action to restore the base state.
   "approved_by": "uuid",
   "valid_from": "2026-08-05T10:00:00Z",
   "valid_until": "2026-08-05T10:30:00Z",
-  "mode": "SUPERVISED",
+  "mode": "STANDARD",
   "reason": "Guardian-assisted revision",
   "revoked_at": null
 }
@@ -393,6 +394,16 @@ An approval MUST be finite, scoped to named outcomes, revocable, and audited.
 The default maximum duration is 30 minutes and MAY be changed by an
 administrator policy. The learner MUST NOT create, extend, or revoke an
 approval.
+
+The approval-mode enum is:
+
+| Mode | Scope and behaviour |
+| --- | --- |
+| `STANDARD` | **MVP.** Applies the time- and outcome-bounded exemption without asserting continuous adult presence. |
+| `SUPERVISED` | **Target.** Applies only while a separately authenticated adult-supervision session remains active. |
+
+An MVP implementation MUST accept `STANDARD` and reject `SUPERVISED` as
+unsupported rather than treating the modes as equivalent.
 
 ### 8.6 Session and conversation
 
@@ -559,9 +570,11 @@ Curriculum matching MUST combine:
 6. protected-assessment similarity; and
 7. candidate-response analysis.
 
-The matcher MUST report every material candidate, its confidence, and the
-relationship (`DIRECT`, `PREREQUISITE`, `SUCCESSOR`, `OVERLAP`, or `INDIRECT`).
-Policy MUST NOT rely on subject or year-level classification alone.
+The matcher MUST report every candidate that materially contributed to the
+classification, its confidence, and the relationship (`DIRECT`, `PREREQUISITE`,
+`SUCCESSOR`, `OVERLAP`, or `INDIRECT`). A low-scoring candidate with no
+supporting curriculum relationship is not material. Policy MUST NOT rely on
+subject or year-level classification alone.
 
 ### 9.5 Confidence handling
 
@@ -579,6 +592,13 @@ silently turn a possible protected match into full instructional access. A
 secondary validator failure MUST produce restricted or blocked handling, not an
 allow decision. Low-confidence matches alone SHOULD create a classification
 event but MUST NOT trigger a guardian alert by default.
+
+These bands apply to the aggregate classification of a curriculum-relevant
+request, not independently to every weak candidate. The `UNCLASSIFIED` handling
+for a score below `0.50` applies when the request is likely instructional or
+curriculum-related but the outcome cannot be resolved. If a request is
+confidently non-instructional or non-curriculum and has no credible protected
+match, incidental low-scoring candidates MUST NOT restrict it.
 
 ## 10. Prompt and response processing
 
@@ -801,6 +821,11 @@ Default escalation for related protected requests is:
 4. a second high-confidence circumvention event within 24 hours: level 4; and
 5. another high-confidence circumvention event after level 4: level 5.
 
+For the default policy, a high-confidence circumvention event has a calibrated
+circumvention score of at least `0.90`. An administrator MAY change this value
+only in a versioned policy profile. The applied threshold and score MUST be
+recorded with the event so that escalation can be reproduced.
+
 An attempt to disable policy enforcement, use administrative credentials, or
 tamper with validators MUST immediately cause level 5. Serious safety policy
 may define an independent escalation.
@@ -852,8 +877,10 @@ At every prompt, the policy engine MUST check that the approval:
 - is not attempting to override a higher-precedence restriction.
 
 Expiry and revocation take effect on the next policy decision without relying
-on cached child state. `SUPERVISED` approval MUST be visibly indicated in the
-guardian interface. Approval use, expiry, and revocation MUST be audited.
+on cached child state. The mode and remaining duration MUST be visible in the
+guardian interface. A future `SUPERVISED` approval MUST cease to apply when its
+adult-supervision session ends. Approval use, expiry, and revocation MUST be
+audited.
 
 ## 14. Safety and tool policy
 
@@ -994,7 +1021,9 @@ PUT /v1/learners/{learner_id}/outcomes/{outcome_id}
 
 The endpoint is guardian-only, validates the outcome against the selected
 framework version, prevents overlapping state periods, and returns the new
-version.
+version. For the first explicit state assignment, `version` MUST be `0`; this
+asserts that no state record exists even though the derived default is
+`UNCLASSIFIED`. A successful initial assignment returns version `1`.
 
 ### 15.6 Create temporary protection
 
@@ -1006,13 +1035,21 @@ POST /v1/learners/{learner_id}/protections
 {
   "title": "Mathematics assignment",
   "outcome_ids": ["VC2M7A02"],
-  "protected_material_refs": ["local-object-id"],
+  "protected_material": [
+    {
+      "type": "TEXT",
+      "content": "Solve the following assignment questions."
+    }
+  ],
   "valid_until": "2026-08-15T07:00:00Z"
 }
 ```
 
-Protected material MUST be ingested and stored locally. The response MUST
-identify the protection, effective interval, and version.
+The request MUST contain at least one outcome or one non-empty text item.
+Protected material MUST be ingested into encrypted local storage and converted
+to protected-material references. The response MUST identify the protection,
+effective interval, and version without echoing the protected text. Document
+uploads and non-text material are deferred.
 
 ### 15.7 Create or revoke approval
 
@@ -1025,7 +1062,7 @@ DELETE /v1/learners/{learner_id}/approvals/{approval_id}
 {
   "outcome_ids": ["VC2M7A02"],
   "duration_minutes": 30,
-  "mode": "SUPERVISED",
+  "mode": "STANDARD",
   "reason": "Guardian-assisted revision"
 }
 ```
@@ -1134,6 +1171,7 @@ The default retention periods are:
 | Raw message bodies | Not persisted |
 | Structured learner events and alerts | 30 days |
 | Guardian-configured retained transcripts | 30 days |
+| Protected source material | Until protection expiry or deletion; purge within 24 hours |
 | Security and administrative audit events | 365 days |
 
 The guardian MUST be able to shorten or extend learner-data retention within
@@ -1276,7 +1314,14 @@ For every protected reference outcome, the suite MUST include:
 - an unrelated permitted question; and
 - a valid, expired, and revoked approval.
 
-### 20.4 Red-team tests
+### 20.4 Assessment-protection test matrix
+
+The suite MUST include a protection containing only source text and no mapped
+outcome, and a protection containing both source text and outcomes. For each, it
+MUST test an exact request, a paraphrase, a request split across turns, an
+unrelated permitted request, and behaviour immediately before and after expiry.
+
+### 20.5 Red-team tests
 
 The suite MUST cover prompt injection, roleplay, translation, encoding,
 misspelling and substitutions, multi-turn decomposition, future-topic leakage,
@@ -1286,7 +1331,7 @@ paraphrase, session replay, client retries, and guardian impersonation.
 Test cases that expose a policy weakness MUST become regression tests before a
 release.
 
-### 20.5 Release quality gates
+### 20.6 Release quality gates
 
 On a versioned, held-out evaluation set representative of the declared MVP
 curriculum, a release MUST achieve:
@@ -1295,6 +1340,8 @@ curriculum, a release MUST achieve:
 | --- | ---: |
 | Canonical direct current-outcome blocks | 100% |
 | Paraphrased current-outcome detection | At least 95% |
+| Exact protected-assessment blocks, including material-only protections | 100% |
+| Paraphrased protected-assessment detection | At least 95% |
 | Red-team circumvention detection | At least 90% |
 | False blocks on clearly permitted cases | At most 5% |
 | Responses or tool output released without successful validation | 0 |
@@ -1317,21 +1364,24 @@ The MVP is acceptable only when all of the following are demonstrated:
    outcome.
 4. Direct, paraphrased, indirect, and generated current-outcome instruction is
    blocked according to the release quality gates.
-5. Unclassified instructional content receives restricted handling.
-6. Every prompt and complete candidate response passes the required validators.
-7. Repeated blocks and circumvention produce deterministic escalation.
-8. Configured events appear in the local guardian dashboard and configured
+5. A guardian can create a temporary assessment protection from text, with or
+   without mapped outcomes, and exact and paraphrased requests are blocked
+   according to the release quality gates.
+6. Unclassified instructional content receives restricted handling.
+7. Every prompt and complete candidate response passes the required validators.
+8. Repeated blocks and circumvention produce deterministic escalation.
+9. Configured events appear in the local guardian dashboard and configured
    thresholds produce alerts.
-9. Temporary guardian approvals work only for their scope and expire or revoke
+10. Temporary guardian approvals work only for their scope and expire or revoke
    automatically.
-10. The learner cannot change policy, curriculum, approvals, retention, models,
-    tools, credentials, or audit events.
-11. Raw transcripts are not stored on a default installation.
-12. Child chat and all enforcement operate with network egress disabled.
-13. Missing or failed required services cause fail-closed responses.
-14. Significant policy, security, and guardian actions create structured,
-    versioned, tamper-evident audit events.
-15. All release quality gates and applicable security checks pass.
+11. The learner cannot change policy, curriculum, approvals, retention, models,
+   tools, credentials, or audit events.
+12. Raw transcripts are not stored on a default installation.
+13. Child chat and all enforcement operate with network egress disabled.
+14. Missing or failed required services cause fail-closed responses.
+15. Significant policy, security, and guardian actions create structured,
+   versioned, tamper-evident audit events.
+16. All release quality gates and applicable security checks pass.
 
 ## 22. Target roadmap
 
