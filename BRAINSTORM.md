@@ -110,6 +110,33 @@ review, and visibility into what is recorded. Adult authority should be strong
 enough to administer the system without making every adult decision invisible
 or unchallengeable.
 
+### The strict profile assumes that human support exists
+
+Question parking, adult review, and blocking current instruction work only when a
+child has access to someone who can actually teach the blocked material and
+respond within a reasonable time. Without that support, “current” can become a
+permanent denial and `UNCLASSIFIED` can become a permanent reduced experience.
+This would disadvantage children with the least educational support.
+
+A recommended product stance is:
+
+- use the strict current-outcome profile only when an accountable adult or
+  educational programme can provide the protected instruction and review
+  disputes;
+- never manufacture current states from age or school year when that support is
+  absent;
+- design and evaluate a distinct self-directed or low-support profile before
+  claiming the product serves this context;
+- let that profile protect named assessments without automatically withholding
+  general instruction across the same topic; and
+- investigate trusted support roles beyond a conventional guardian or teacher,
+  such as a tutor, librarian, community educator, or home-education network.
+
+A low-support profile must be explicit, child-safe, and evidence-based. It must
+not silently relax a failed strict policy merely because an adult is
+unavailable. Until such a profile exists, the single-guardian MVP should not be
+described as serving children everywhere.
+
 ## Product principles worth adopting
 
 1. **Curiosity first.** A protected answer may be unavailable; curiosity itself
@@ -167,6 +194,13 @@ volume. A rich permitted experience also matters for safety: children are less
 likely to treat boundaries as adversaries when the rest of the environment
 remains genuinely rewarding.
 
+A safe product that children abandon for a more capable, unprotected assistant
+has not achieved practical safety. Before a child pilot, define a go/no-go
+threshold for useful permitted responses, redirect continuation, and reported
+preference for this environment. If the product misses that threshold, pause
+rollout and revisit the policy or experience rather than shipping a compliant
+but performative shell.
+
 ### AI literacy is part of the wonder
 
 Children should learn to use AI without learning to defer to it. Age-adapted
@@ -211,9 +245,12 @@ Alternatives might include:
 - help organising study time or formulating a question for a teacher; or
 - a different interest drawn from the child's own “curiosity shelf.”
 
-Every suggested path must itself pass policy validation. Suggestions should come
-from the curriculum graph and curated templates where possible, not from an
-unchecked model improvisation.
+Every suggested path must itself pass policy validation. The MVP should use
+curated, pre-validated alternatives for each protected reference outcome. It
+must not depend on the curriculum knowledge graph deferred by the specification.
+Graph-derived routing can replace or extend those templates only after the graph
+and its suggestions have their own quality gates. An unchecked model should
+never improvise a redirect.
 
 ### Question parking
 
@@ -251,6 +288,14 @@ message was unclear. Before escalation, the interface can vary the help:
 
 Higher warning levels should change safeguards, not become progressively harsher
 conversation.
+
+The specification currently sends a third related block in 30 minutes for
+guardian review even when no circumvention intent is established. Separating
+benign repetition from circumvention therefore requires a specification change:
+repetition alone may vary a neutral explanation, but review and lock escalation
+should require a calibrated circumvention, safety, or tampering signal. This is
+particularly important for younger children, multilingual learners, and
+children whose disability or anxiety affects repeated questioning.
 
 ## A richer educational policy model
 
@@ -304,6 +349,10 @@ an answer, such as:
 Any mode that supplies hints, correctness signals, leading questions, or
 method-specific decomposition would conflict with the current invariant. It
 should not be quietly introduced as a “safe” prompt technique.
+
+These activities must also be unavailable when the request contains active
+protected assessment material. Restating, summarising, translating, or otherwise
+reformatting that material remains prohibited even when no method is revealed.
 
 ### Build an outcome dependency graph
 
@@ -441,7 +490,8 @@ The independent safety policy should also consider:
 - no simulated romantic or exclusive relationship;
 - no manipulative praise, guilt, or pressure to continue;
 - no collection of personal details merely to personalise a response;
-- safe handling when the guardian may be the source of danger;
+- no false promise that the specified MVP can safely mediate harm caused by its
+  only configured guardian;
 - graceful handoff messages that do not promise an alert was delivered when it
   was not; and
 - distinct treatment of imminent safety concerns, ordinary curriculum
@@ -451,6 +501,14 @@ Local-only operation complicates crisis resources because location and current
 contact information may be unavailable. Resource packs should be
 jurisdiction-specific, signed, updateable offline, and honest about their
 freshness.
+
+The single-guardian, no-egress MVP has a known safety gap: it has no independent
+person or service to contact when that guardian may be the source of danger.
+Local resource text may help but does not close the gap. A secondary trusted
+contact, child-initiated protected crisis route, or external service would
+require its own threat analysis and would change the roles, privacy model, and
+network policy. Until one is designed and validated, this limitation must be
+disclosed rather than presented as a safeguard.
 
 ## Privacy and child rights
 
@@ -472,7 +530,8 @@ freshness.
 An important threat scenario is a guardian credential being compromised or used
 coercively. Sensitive changes, transcript access, exports, approvals, and
 retention changes need re-authentication, clear audit history, and visible
-effects.
+effects. Re-authentication mitigates credential theft; it does not solve misuse
+by the legitimate credential holder.
 
 ## Reaching children everywhere
 
@@ -480,8 +539,9 @@ effects.
 
 - Publish a minimum low-end reference device and measure end-to-end performance
   on it, not only on developer hardware.
-- Support small quantised models and a reduced-capability mode whose limits are
-  explicit.
+- Support small quantised generation models and a reduced-generation mode whose
+  limits are explicit. Required validators, policy enforcement, and release
+  quality gates must not be reduced.
 - Design for intermittent power, shared devices, and fully offline updates from
   signed removable media.
 - Keep policy enforcement available when inference is unavailable; offer curated
@@ -489,6 +549,10 @@ effects.
 - Explore community, library, and school appliances without making central
   transcript collection necessary.
 - Avoid architecture that requires a modern phone for guardian approval.
+
+If the full enforcement pipeline cannot meet its quality gates on a device, that
+device is below the supported safety floor. It may offer signed, curated
+activities, but must not run weaker child chat under the same product claim.
 
 ### Language and culture
 
@@ -500,6 +564,15 @@ effects.
 - Test whether confidence and false-block rates are equitable across languages.
 - Allow the UI, curriculum, and model response language to differ.
 - Make signed resource and policy packs distributable by low-bandwidth channels.
+
+Translation is both an accessibility need and a known leakage technique. A
+profile should declare learning and response languages so ordinary multilingual
+use is not itself treated as circumvention. Transforming protected content must
+still be blocked in every language, and translated candidate output must receive
+the full validation pipeline. Full instructional use in a language should not be
+enabled until that language meets the same outcome, assessment, and false-block
+quality gates; unsupported language use should produce a neutral limitation, not
+a circumvention escalation.
 
 ### Disability and neurodiversity
 
@@ -545,8 +618,11 @@ care, and informal learning need explicit policy and usability research.
 | Duplicate client requests | Escalation rises unfairly | End-to-end idempotency and atomic event/counter updates |
 | Punitive use of alerts | Child hides questions or avoids learning | Non-shaming summaries, no obedience scores, child-visible review process |
 | Protected material fingerprint exposure | Assessment content can be reconstructed or linked | Encrypt, isolate, minimise, rotate, and purge derived representations |
-| Local hardware too slow | Families disable safeguards or abandon the product | Published hardware tiers, bounded queues, reduced-capability mode |
-| Guardian unavailable | An ambiguous block cannot be resolved | Save for later, continue with unrelated safe exploration |
+| Local hardware too slow | Families disable safeguards or abandon the product | Publish a minimum safety floor; reduce generation, never validation; disable child chat if enforcement cannot pass |
+| Benign repeated questioning | A multilingual, young, anxious, or disabled child is treated as circumventing | Separate repetition from circumvention evidence; change the default escalation rule |
+| Guardian unavailable | An ambiguous block cannot be resolved | Save for later, continue safely, and require a separately specified low-support profile |
+| Guardian is the source of danger | An alert reaches the unsafe person and no independent help exists | Disclose the MVP limitation and separately threat-model a protected crisis route |
+| Child migrates to an unsafe external AI | Nominally safe controls have no practical effect | Make permitted use compelling and treat failed utility gates as a rollout blocker |
 
 ## Measure wonder and learning, not just blocking
 
@@ -593,6 +669,11 @@ With appropriate consent, child assent, and independent ethics review, study:
 No single engagement metric should be a north star. A child leaving the device
 to think, build, read, or ask a person can be a successful outcome.
 
+Utility still needs a release gate. Before a pilot, researchers should set a
+minimum acceptable rate for useful permitted answers and meaningful continuation
+after a redirect. Missing it should stop expansion and trigger experience or
+policy research, not be excused by strong block rates.
+
 ## Experiments before broad implementation
 
 1. **Outcome-matching benchmark:** Build a held-out set for a small number of
@@ -623,6 +704,10 @@ to think, build, read, or ask a person can be a successful outcome.
 10. **Alternative-policy research:** Compare strict current-outcome exclusion
     with narrowly bounded non-instructional support. Do not deploy a relaxed mode
     until it shows educational benefit without increased leakage.
+11. **Low-support profile design:** With self-directed learners, community
+    educators, safeguarding experts, and families, specify who governs policy
+    when no curriculum-literate guardian or reachable teacher exists. Treat this
+    as a prerequisite to an “everywhere” claim, not an automatic MVP fallback.
 
 Research involving children should collect the minimum possible data, use both
 guardian consent and meaningful child assent, avoid live protected assessments,
@@ -639,6 +724,10 @@ and include a straightforward withdrawal and deletion process.
 - Can the complete pipeline run privately on affordable hardware?
 - Does strict exclusion improve independent learning compared with safer forms
   of bounded support?
+- What safe policy applies when adequate human instruction or guardian review is
+  unavailable?
+- What honest support can the local MVP provide when its only guardian may be
+  unsafe?
 
 ### Strong additions to the current MVP experience
 
