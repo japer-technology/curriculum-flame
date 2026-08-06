@@ -1,6 +1,6 @@
 # Curriculum Flame
 
-_An AI whose flame can burb back, flare sideways, or jump ahead, but never ignite the lessons currently being taught._
+_An AI Agent whose flame can flash back, flare sideways, or bound ahead, but never ignite the lessons currently being taught._
 
 <p align="center">
   <picture>
