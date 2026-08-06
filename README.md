@@ -4,7 +4,7 @@ _An AI whose flame can burn backward, flare sideways, or reach beyond—but neve
 
 <p align="center">
   <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/curriculum-orbit/main/CURRICULUM-ORBIT.png" alt="Curriculum Orbit" width="320">
+    <img src="https://raw.githubusercontent.com/japer-technology/curriculum-flame/main/CURRICULUM-FLAME.png" alt="Curriculum Orbit" width="320">
   </picture>
 </p>
 
