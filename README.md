@@ -1,4 +1,4 @@
-# out-of-band-learning
+# Curriculum Orbit
 
 <p align="center">
   <picture>
