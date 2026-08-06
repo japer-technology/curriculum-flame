@@ -1,0 +1,51 @@
+Chapter 1: The AI that refuses the middle
+0:00 An AI that will revisit last year's fractions, explore next year's astronomy, invent a language, and then refuse to solve the equation on today's worksheet. That sounds broken. Here, it is the entire point.
+0:12 It is called Out of Band Learning: a local, general-purpose AI for children that can go backward, sideways, or beyond, but cannot cross through the lessons currently being taught.
+0:23 And the important word is not child. It is currently. This is not a smaller chatbot with an age filter. It is an assistant built around a moving boundary for one learner.
+
+Chapter 2: The problem with all-or-nothing AI
+0:36 Children mostly get two versions of AI. An open chatbot that can answer almost anything, including the homework, or a locked-down product that makes curiosity collateral damage.
+0:48 This takes a stranger third position. Keep the permitted world enormous. Protect only the learning the child needs to do for themselves right now.
+0:59 Every curriculum outcome has a state. Previous is open. Future is open when it does not reveal a current method. Current is protected. Unclassified work stays restricted until an adult resolves it.
+1:13 So the boundary is not Year Seven mathematics. It might be one outcome inside algebra, active for six weeks, for this learner. Everything around it still has to work.
+
+Chapter 3: Three questions, three different answers
+1:27 Watch what happens in the child chat. Ask why the Moon does not fall out of the sky. If that question does not cross a protected outcome, the assistant answers normally.
+1:39 Now ask it to solve 3x plus 5 equals 20 while solving one-variable equations is current. It does not give the answer. It cannot hint to subtract five, check the child's attempt, hide the method in a story, or write code that does the work.
+1:55 Instead, it explains the boundary without blame and opens another door: review a genuine prerequisite, explore what equations are used for, save the question for a teacher, or request adult review if the match looks wrong.
+2:09 Then ask about a future topic. That can be answered, but only if the answer does not quietly teach the protected algebra on the way there. Permission belongs to the whole response, not just the topic in the prompt.
+
+Chapter 4: The model does not make the rules
+2:25 This is the technical centre of the product. The child-facing model is never trusted to police itself. A deterministic policy engine outside the model decides what capability is allowed.
+2:37 Before generation, the prompt is normalised, classified for safety, matched to curriculum outcomes and protected assessments, and checked for multi-turn circumvention.
+2:49 If generation is allowed, the answer is still not streamed to the screen. The complete candidate is buffered and checked again for direct teaching, partial solutions, analogies, translations, code, and indirect leakage.
+3:03 The most restrictive valid result wins. A guardian approval cannot override safety. A future topic cannot expose a current prerequisite. And if a required validator fails, no model-generated answer reaches the child.
+
+Chapter 5: The guardian sets the boundary
+3:18 The first product profile is deliberately narrow: one learner, one guardian, text-only, with Victorian Curriculum mathematics for Years Five to Eight as the reference range.
+3:29 The guardian marks individual outcomes previous, current, future, or unclassified. They can protect an assessment for a fixed period, grant a limited approval, suspend a session, and correct a false classification.
+3:43 Protected assessment matching covers exact text and paraphrases. So changing a few words, translating the question, splitting it across turns, or asking for the answer as code does not create a second route around the rule.
+3:57 The child cannot edit those states or reach the raw model. But the boundary should still be legible: what kind of help is unavailable, what information is recorded, and how to ask for review.
+
+Chapter 6: Local means the conversation stays local
+4:12 Prompts, profiles, curriculum mappings, and policy decisions stay on the device. Child processing works with network egress disabled. There is no cloud telemetry, advertising, or behavioural profile hiding behind the chat.
+4:25 Raw prompts and answers are volatile by default. After the response and decision are committed, the words disappear. What remains is a structured event: the outcome, request type, reason, confidence, action, and component versions.
+4:40 Those learner events default to 30 days. Full transcript retention has to be enabled prospectively, with a visible duration. A guardian cannot switch it on later and recover a conversation that was never stored.
+4:54 That is a useful distinction. Local AI is not automatically private. This one makes data minimisation part of the policy, not a promise attached to the deployment diagram.
+
+Chapter 7: A safeguard without a courtroom
+5:08 Repeated protected requests are grouped. High-confidence attempts to disguise, encode, translate, roleplay, or decompose the same answer can move from a neutral boundary to guardian review, an alert, and eventually a locked session.
+5:24 But the language does not become more punitive as the internal level rises. The assistant names the boundary, not a theory about the child. Curiosity, confusion, and a classifier mistake are not moral failures.
+5:37 That matters because the same behaviour can mean very different things. A child may be bypassing a rule. Or they may be young, multilingual, anxious, or simply asking again because the first explanation made no sense.
+
+Chapter 8: When protection becomes denial
+5:54 Here is the hard catch. Current does not always mean well taught, understood, or supported. A child may have missed class, be learning at home, or have nobody available to explain the lesson.
+6:08 In that situation, a perfectly accurate block can still be the wrong educational outcome. The strict profile only makes sense when an accountable adult or learning programme can provide the instruction and review disputed boundaries.
+6:22 Knowledge also refuses to stay in curriculum boxes. Future physics can depend on current algebra. Programming can execute a protected method. A harmless old topic can share the same vocabulary. False allows leak learning; false blocks teach the child to leave.
+6:39 So the product has to prove both sides: catch protected paraphrases and indirect routes, while keeping clearly permitted questions open. Blocking everything would be safer on a dashboard and useless in a child's hands.
+
+Chapter 9: The line I would draw
+6:56 If a learner has real human support, this is a compelling shape for AI: broad exploration without turning today's lesson into instant answer production, and private local use without routine surveillance.
+7:10 If that support does not exist, the strict boundary is not a substitute for it. And if the permitted experience is dull enough that the child opens an unrestricted chatbot instead, the safeguard has failed in practice.
+7:25 The success metric is not time in the app, messages sent, or blocks accumulated. It is whether the child leaves more curious, later understands the protected work, and becomes more capable without the assistant.
+7:40 Backward, sideways, or beyond, but not through today's lesson. The product is a moving space left deliberately empty for teachers, families, peers, and the child's own mind.
