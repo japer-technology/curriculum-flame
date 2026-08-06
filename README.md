@@ -1,4 +1,4 @@
-# Curriculum Orbit
+# Curriculum Flame
 
 _An AI that can go backward, sideways or beyond - but cannot cross through the lessons currently being taught._
 
