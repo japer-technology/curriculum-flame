@@ -1,6 +1,6 @@
 # Curriculum Flame
 
-_An AI that can go backward, sideways or beyond - but cannot cross through the lessons currently being taught._
+_An AI whose flame can burn backward, flare sideways, or reach beyond—but never ignite the lessons currently being taught._
 
 <p align="center">
   <picture>
