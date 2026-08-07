@@ -17,7 +17,7 @@ _An AI Agent whose flame can flash back, flare sideways, or bound ahead, but nev
 - [Critique, rebuttal, and acknowledged feedback](docs/review/)
 - [Design transcripts](docs/design/transcripts/)
 
-### Use your imagination (this has video and a smoothing tone)
+## Use your imagination... this is a great video with a soothing tone
 
 What if a child could ask an AI almost anything—
 explore last year's fractions, next year's astronomy,
