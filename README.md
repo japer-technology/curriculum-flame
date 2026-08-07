@@ -17,7 +17,145 @@ _An AI Agent whose flame can flash back, flare sideways, or bound ahead, but nev
 - [Critique, rebuttal, and acknowledged feedback](docs/review/)
 - [Design transcripts](docs/design/transcripts/)
 
-### The Meaning Behind the Logo
+### Use your imagination (this has video and a smoothing tone)
+
+What if a child could ask an AI almost anything—
+explore last year's fractions, next year's astronomy,
+write a story, invent a game—
+but the AI could not do the learning currently assigned to them?
+
+That is the idea behind Curriculum Flame:
+a local AI assistant with a moving boundary around one learner's current work.
+
+Most children get two kinds of AI.
+There is the open chatbot, which can answer nearly anything,
+including today's homework.
+Or there is the locked-down product,
+where safety restrictions can make curiosity collateral damage.
+
+Curriculum Flame takes a third position.
+Keep the permitted world broad.
+Protect only the learning the child needs to practise for themselves right now.
+
+The boundary is not a whole year level or a whole subject.
+It can be a single curriculum outcome,
+active for a particular learner for a particular time.
+
+Previous learning can be open.
+Future learning can be open,
+as long as it does not reveal a method that is currently protected.
+Current learning is protected.
+And anything the system cannot classify confidently stays restricted
+until an adult can review it.
+
+Imagine a child asks why the Moon does not fall from the sky.
+If that does not cross a protected outcome,
+the assistant answers normally.
+
+Then the child asks it to solve an equation
+while solving that kind of equation is current learning.
+Curriculum Flame does not give the answer.
+It does not hide the method in a story,
+translate the question,
+write code that solves it,
+or turn the answer into a sequence of hints.
+
+Instead, it explains the boundary without blame.
+It can help the child revisit a real prerequisite,
+explore why equations matter,
+save the question for a teacher,
+or ask for adult review when the system has drawn the line in the wrong place.
+
+That distinction matters.
+The goal is not to stop questions.
+It is to leave room for the learner's own thinking.
+
+The model does not make that decision for itself.
+
+Before a response is generated,
+a policy layer normalises the prompt,
+checks safety,
+matches it against curriculum outcomes and protected assessments,
+and looks for attempts to work around the boundary across multiple turns.
+
+Even when generation is allowed,
+the response is not sent straight to the child.
+The complete answer is checked again for direct teaching,
+partial solutions,
+analogies,
+translations,
+code,
+and indirect routes into protected learning.
+
+The most restrictive valid result wins.
+If a required check fails,
+no model-generated answer reaches the child.
+
+The guardian sets the boundary,
+marking individual outcomes as previous, current, future, or unclassified.
+They can temporarily protect an assessment,
+correct an incorrect classification,
+or pause a session.
+
+But adult control must not become surveillance.
+The child should understand what help is unavailable,
+what information is recorded,
+and how to request a review.
+
+Curriculum Flame is local by design.
+Learner profiles, prompts, curriculum mappings, and policy decisions stay on the device.
+There is no cloud telemetry, advertising, or behavioural profiling behind the chat.
+
+Raw conversations disappear by default after a response is delivered.
+What remains is a minimal structured event:
+the type of request,
+the policy decision,
+and the reason for it.
+
+Full transcript retention must be explicitly enabled in advance.
+It cannot be switched on later to recover a conversation that was never stored.
+
+But this is not a claim that technology can perfectly contain knowledge.
+
+Curriculum outcomes overlap.
+Future physics can depend on current algebra.
+Programming can carry out a protected method.
+A helpful explanation in one subject can quietly reveal another.
+
+So Curriculum Flame has to be honest about what it is:
+not a perfect barrier,
+but a policy system designed to reduce risk,
+make decisions inspectable,
+and preserve productive struggle where real human support exists.
+
+That support is essential.
+A child who missed class,
+is learning at home,
+or has no one available to help
+may need instruction more than another refusal.
+
+The product cannot make a strict boundary a substitute for a teacher,
+a family member,
+or an accessible learning programme.
+
+And it cannot succeed by blocking everything.
+If the permitted experience is dull,
+or if every uncertain question becomes a refusal,
+children will simply leave for an unrestricted chatbot.
+
+Success is not more blocks,
+more messages,
+or more time in the app.
+
+Success is a learner who stays curious,
+later understands the protected work,
+and becomes more capable without the assistant.
+
+Curriculum Flame:
+backward, sideways, or beyond—
+but not through today's lesson.
+
+### The Logo
 
 The flame represents the enduring spark of learning, the point where curiosity becomes understanding and knowledge begins to grow.
 
