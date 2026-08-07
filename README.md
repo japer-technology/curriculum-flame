@@ -15,7 +15,6 @@ _An AI Agent whose flame can flash back, flare sideways, or bound ahead, but nev
 - [Implementation plan](docs/planning/implementation-plan.md)
 - [Brainstorming and research notes](docs/research/brainstorm.md)
 - [Critique, rebuttal, and acknowledged feedback](docs/review/)
-- [Design transcripts](docs/design/transcripts/)
 
 ## Use your imagination... this is a great video with a soothing tone
 
