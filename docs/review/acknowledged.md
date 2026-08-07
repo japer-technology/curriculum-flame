@@ -1,9 +1,9 @@
 # Acknowledged: Ideas to Incorporate
 
 This document records what the project accepts from
-[`CRITIQUE.md`](./CRITIQUE.md) and what it has decided to promote from its own
+[`docs/review/critique.md`](./critique.md) and what it has decided to promote from its own
 non-normative material as a result of reading it. Its companion,
-[`REBUTTAL.md`](./REBUTTAL.md), argues the points that are contested; nothing
+[`docs/review/rebuttal.md`](./rebuttal.md), argues the points that are contested; nothing
 contested there is repeated here.
 
 Every item below has an identifier, a source, a destination document and
@@ -15,7 +15,7 @@ destination is an opinion, not a commitment.
 | Group | Meaning |
 | --- | --- |
 | **Adopted** | The critique named something the project had not reached. New material. |
-| **Promoted** | The idea already exists in [`BRAINSTORM.md`](./BRAINSTORM.md) or the plan, but only as non-normative or deferred material. The critique's pressure justifies binding it. |
+| **Promoted** | The idea already exists in [`docs/research/brainstorm.md`](../research/brainstorm.md) or the plan, but only as non-normative or deferred material. The critique's pressure justifies binding it. |
 | **Framing** | No design change. A change to what the project claims, and where it claims it. |
 
 Nothing here weakens the core invariant, the fail-closed rule, complete response
@@ -27,7 +27,7 @@ policy. Any item that appeared to would have been rejected instead.
 ### ACK-01 — Model adapter contract and runtime qualification
 
 The project is model-independent in practice: no runtime is named anywhere in
-[`SPECIFICATION.md`](./SPECIFICATION.md). The critique is right that this is
+[`docs/product/specification.md`](../product/specification.md). The critique is right that this is
 asserted rather than defined, and that an untestable independence claim is not
 worth much. Adopt its formulation directly.
 
@@ -46,14 +46,14 @@ A runtime that has no qualification record is not an approved runtime, and
 substituting one MUST be an audited administrative action rather than a
 configuration edit.
 
-- **Destination:** `SPECIFICATION.md` §7 and §10.5; `IMPLEMENTATION-PLAN.md`
+- **Destination:** `docs/product/specification.md` §7 and §10.5; `docs/planning/implementation-plan.md`
   §6.1, D-03, and M4.
 - **Gate:** M4 exit; a runtime swap without a passing qualification run cannot
   ship.
 
 ### ACK-02 — Governance for curriculum relationship edges
 
-[`REBUTTAL.md`](./REBUTTAL.md) contests promoting the dependency graph to a
+[`docs/review/rebuttal.md`](./rebuttal.md) contests promoting the dependency graph to a
 release-blocking enforcement dependency. It does not contest this: the
 relationship fields the MVP already ships — `prerequisite_ids` and
 `successor_ids` in §8.1 — carry no provenance, no review status, no confidence,
@@ -77,7 +77,7 @@ decisions without an audit record. Model-inferred edges remain candidate
 evidence and never become authoritative without review — already the project's
 stated position, now attached to a schema that can enforce it.
 
-- **Destination:** `SPECIFICATION.md` §8.1 and §9.4; `IMPLEMENTATION-PLAN.md`
+- **Destination:** `docs/product/specification.md` §8.1 and §9.4; `docs/planning/implementation-plan.md`
   M2, M3, and §12.
 - **Gate:** M2 exit; unreviewed edges must be distinguishable from reviewed ones
   in storage and in the decision event.
@@ -104,8 +104,8 @@ Requirements:
 This makes policy behaviour inspectable rather than merely audited after the
 fact, and it gives the false-positive problem a tool instead of only a metric.
 
-- **Destination:** `IMPLEMENTATION-PLAN.md` §3.2, M6, and D-09;
-  `SPECIFICATION.md` §6.3 for the guardian-facing surface.
+- **Destination:** `docs/planning/implementation-plan.md` §3.2, M6, and D-09;
+  `docs/product/specification.md` §6.3 for the guardian-facing surface.
 - **Gate:** D-09 decides whether the guardian-facing surface is an MVP release
   requirement; the developer and audit surface is required for M8 evaluation
   reproducibility regardless.
@@ -123,8 +123,8 @@ near-boundary permitted questions, and clearly permitted controls. It MUST
 contain no child content and no live protected assessment material, and released
 assessment cases MUST be synthetic.
 
-- **Destination:** `IMPLEMENTATION-PLAN.md` §10 and M9; `BRAINSTORM.md` open
-  governance ideas; `SPECIFICATION.md` §20.5.
+- **Destination:** `docs/planning/implementation-plan.md` §10 and M9; `docs/research/brainstorm.md` open
+  governance ideas; `docs/product/specification.md` §20.5.
 - **Gate:** M9; a release that reports gate results without publishing the means
   to reproduce them is not a qualified release.
 
@@ -148,7 +148,7 @@ Requirements to carry, even while the shape itself remains deferred:
 The schema and authorisation model MUST leave room for this without exposing it
 in the MVP, in line with the existing rule on deferred capabilities.
 
-- **Destination:** `SPECIFICATION.md` §3.2 and §18; `IMPLEMENTATION-PLAN.md`
+- **Destination:** `docs/product/specification.md` §3.2 and §18; `docs/planning/implementation-plan.md`
   §3.3 and phase two.
 - **Gate:** deferred; its absence from the MVP must be stated rather than
   implied.
@@ -168,8 +168,8 @@ boundary states in every supported modality, and the requirement that repeated
 questioning arising from accessibility, memory, anxiety, or communication
 differences is not treated as circumvention evidence.
 
-- **Destination:** new normative section in `SPECIFICATION.md`, referenced from
-  §11 and §20; `IMPLEMENTATION-PLAN.md` M6 and M8 already carry the tests.
+- **Destination:** new normative section in `docs/product/specification.md`, referenced from
+  §11 and §20; `docs/planning/implementation-plan.md` M6 and M8 already carry the tests.
 - **Gate:** M6 exit and M8 release evaluation; accessibility results reported
   separately, as safety already is.
 
@@ -190,14 +190,14 @@ At guardian setup, and in the release documentation, state in plain language:
 - the disclosed safeguarding limitation of a single-guardian, no-egress
   deployment.
 
-- **Destination:** `SPECIFICATION.md` §18 and §20.6; `IMPLEMENTATION-PLAN.md`
+- **Destination:** `docs/product/specification.md` §18 and §20.6; `docs/planning/implementation-plan.md`
   M9; `README.md`.
 - **Gate:** M9; the statement must be generated from the qualifying evaluation
   run rather than written by hand.
 
 ### ACK-08 — An honest entrance to the repository
 
-[`README.md`](./README.md) currently opens on the logo. A reader cannot tell
+[`README.md`](../../README.md) currently opens on the logo. A reader cannot tell
 that this is a pre-implementation design repository, which document is
 normative, or how narrow the first scope is. The critique's observation that
 extensive normative detail “can create false confidence” is correct, and the
@@ -208,13 +208,13 @@ The README should state, before anything else:
 - what the project is — a model-independent educational policy gateway, not an
   inference engine, a tutor, or an agent framework;
 - its current maturity, including that no implementation exists yet;
-- document precedence: `SPECIFICATION.md` is normative, `IDEA.md` describes
-  target intent, and `BRAINSTORM.md`, `CRITIQUE.md`, `REBUTTAL.md`, and this
+- document precedence: `docs/product/specification.md` is normative, `docs/product/idea.md` describes
+  target intent, and `docs/research/brainstorm.md`, `docs/review/critique.md`, `docs/review/rebuttal.md`, and this
   document are non-normative; and
 - the bounded claims that the plan already requires at release, stated now
   rather than only at release.
 
-- **Destination:** `README.md`; `IMPLEMENTATION-PLAN.md` §10 already requires a
+- **Destination:** `README.md`; `docs/planning/implementation-plan.md` §10 already requires a
   bounded-claims README before MVP.
 - **Gate:** immediate; this does not depend on any milestone.
 
@@ -226,7 +226,7 @@ optional is what gets cut when a release is late.
 
 ### ACK-09 — The never-dead-end redirect becomes normative
 
-`BRAINSTORM.md` defines a five-part redirect contract and the plan lists it as a
+`docs/research/brainstorm.md` defines a five-part redirect contract and the plan lists it as a
 pilot-readiness workstream that D-09 may or may not adopt. The critique is right
 that “every denial should offer a useful next action,” and the project should
 stop treating that as optional.
@@ -238,13 +238,13 @@ the question, and a one-action review request. Alternatives MUST be curated and
 pre-validated per protected reference outcome, and MUST NOT be improvised by an
 unchecked model or derived from the deferred graph.
 
-- **Destination:** `SPECIFICATION.md` §6.1 and §11; `IMPLEMENTATION-PLAN.md`
+- **Destination:** `docs/product/specification.md` §6.1 and §11; `docs/planning/implementation-plan.md`
   §3.2 and M6.
 - **Gate:** M6 exit and the redirect-continuation utility gate in D-08.
 
 ### ACK-10 — Learner rights become role permissions
 
-Child agency currently lives in `BRAINSTORM.md` and in D-09. The critique's
+Child agency currently lives in `docs/research/brainstorm.md` and in D-09. The critique's
 point that “children need clear notice, access to understandable decisions, a
 way to request review, and age-appropriate agency” is right, and rights that are
 not in the roles table are not rights.
@@ -256,7 +256,7 @@ minimal structured feedback; see what category of information is recorded and
 visible to a guardian; and see that a guardian restriction exists and ask to
 discuss it.
 
-- **Destination:** `SPECIFICATION.md` §5.1 and §6.1; `IMPLEMENTATION-PLAN.md`
+- **Destination:** `docs/product/specification.md` §5.1 and §6.1; `docs/planning/implementation-plan.md`
   M6.
 - **Gate:** M6 exit, alongside the existing boundary-comprehension and dignity
   measures.
@@ -268,12 +268,12 @@ third related block within a fixed window even with no circumvention evidence.
 The critique's warning about implying misconduct from an uncertain
 classification points the same way as the project's own analysis.
 
-Resolve D-07 in the direction `BRAINSTORM.md` recommends: repetition alone MAY
+Resolve D-07 in the direction `docs/research/brainstorm.md` recommends: repetition alone MAY
 vary the neutral explanation, but review, alert, and lock escalation MUST
 require calibrated circumvention, safety, or tampering evidence. Revise the
 specification before implementing the final escalation path.
 
-- **Destination:** `SPECIFICATION.md` §13.1; `IMPLEMENTATION-PLAN.md` D-07 and
+- **Destination:** `docs/product/specification.md` §13.1; `docs/planning/implementation-plan.md` D-07 and
   M3.
 - **Gate:** blocks final escalation implementation, as already recorded.
 
@@ -292,14 +292,14 @@ context, and treat a gap between groups as a release finding rather than a note.
 Confirm through D-08 that the utility gates are release gates and cannot be
 offset by strong block rates.
 
-- **Destination:** `SPECIFICATION.md` §20.6; `IMPLEMENTATION-PLAN.md` D-08, M8,
+- **Destination:** `docs/product/specification.md` §20.6; `docs/planning/implementation-plan.md` D-08, M8,
   and §11.
 - **Gate:** M8; a passing leakage result with a failing near-boundary result is
   a failed release.
 
 ### ACK-13 — Question parking and the curiosity shelf enter the MVP
 
-Both are already designed in `BRAINSTORM.md`, and the critique independently
+Both are already designed in `docs/research/brainstorm.md`, and the critique independently
 names them. They are the two features that most directly convert a refusal into
 anticipation. Bring them into MVP scope with the data governance the plan
 already demands: a parked question's title and note are retained content and
@@ -307,8 +307,8 @@ need their own visible retention rule, access rule, export path, and deletion
 path. The curiosity shelf MUST remain child-controlled and MUST NOT become
 behavioural profiling, a recommendation feed, or an engagement surface.
 
-- **Destination:** `SPECIFICATION.md` §3.1, §16.2, and §16.4;
-  `IMPLEMENTATION-PLAN.md` §3.2, D-09, and M6.
+- **Destination:** `docs/product/specification.md` §3.1, §16.2, and §16.4;
+  `docs/planning/implementation-plan.md` §3.2, D-09, and M6.
 - **Gate:** D-09 approves the storage and retention contract before the API
   freeze.
 
@@ -326,7 +326,7 @@ evaluation, and safeguarding review. Prohibit describing the product as serving
 children everywhere, or as suitable for self-directed learners, until that
 profile exists and passes its own gates.
 
-- **Destination:** `SPECIFICATION.md` §2.3 and §18; `IMPLEMENTATION-PLAN.md` §5,
+- **Destination:** `docs/product/specification.md` §2.3 and §18; `docs/planning/implementation-plan.md` §5,
   §11, and M9.
 - **Gate:** M9 claim review; already a stated release effect, now stated in the
   normative document too.
@@ -334,19 +334,19 @@ profile exists and passes its own gates.
 ### ACK-15 — The safety floor and its non-generative fallback become normative
 
 The rule that generation degrades and validation does not is currently in
-`BRAINSTORM.md` and the plan's risk register. The critique independently reaches
+`docs/research/brainstorm.md` and the plan's risk register. The critique independently reaches
 the same conclusion. Move it into the specification, together with the
 requirement that a device below the floor offers a deterministic non-generative
 experience and a route to human support rather than a blank failure.
 
-- **Destination:** `SPECIFICATION.md` §18 and §19; `IMPLEMENTATION-PLAN.md` §11
+- **Destination:** `docs/product/specification.md` §18 and §19; `docs/planning/implementation-plan.md` §11
   and M7.
 - **Gate:** M8 performance qualification on the declared minimum reference
   device.
 
 ### ACK-16 — Resolve the tool-table contradiction
 
-[`IDEA.md`](./IDEA.md) section 8 presents defaults such as “Calculator: Allowed”
+[`docs/product/idea.md`](../product/idea.md) section 8 presents defaults such as “Calculator: Allowed”
 and “Code execution: Sandboxed,” which contradicts the specification's total
 deferral of child-initiated tools. The critique's concern about enlarging the
 attack surface is aimed at a capability the project has already refused, but the
@@ -357,13 +357,13 @@ complete tool denial, and record that each tool requires its own threat
 analysis, authorisation model, and release gates equal to the text-only MVP
 before it can be enabled.
 
-- **Destination:** `IDEA.md` §8; `SPECIFICATION.md` §14.2 cross-reference.
+- **Destination:** `docs/product/idea.md` §8; `docs/product/specification.md` §14.2 cross-reference.
 - **Gate:** immediate documentation correction.
 
 ### ACK-17 — Declared profile languages and locally built curriculum packs
 
 The critique asks for “multilingual and culturally reviewed curriculum packs
-rather than direct machine translation of policy labels.” `BRAINSTORM.md`
+rather than direct machine translation of policy labels.” `docs/research/brainstorm.md`
 already argues this and adds a subtlety the critique does not reach: translation
 is simultaneously an accessibility need and a known leakage technique. Promote
 both halves.
@@ -376,8 +376,8 @@ MUST produce a neutral limitation message, never a circumvention escalation. A
 language becomes instructionally supported only after it passes the same
 outcome, assessment, and false-block gates as the first one.
 
-- **Destination:** `SPECIFICATION.md` §8.2, §12.2, and §20.6;
-  `IMPLEMENTATION-PLAN.md` §11 and phase two.
+- **Destination:** `docs/product/specification.md` §8.2, §12.2, and §20.6;
+  `docs/planning/implementation-plan.md` §11 and phase two.
 - **Gate:** per-language qualification; unqualified languages cannot be
   presented as supported.
 
@@ -391,8 +391,8 @@ the existing internal distinction — models emit versioned evidence, only the
 policy engine grants capability — in language a guardian can read, and it says
 better than the project has what the system is and is not.
 
-- **Destination:** `README.md`, `SPECIFICATION.md` §2.1 commentary, and the
-  release documentation required by `IMPLEMENTATION-PLAN.md` M9.
+- **Destination:** `README.md`, `docs/product/specification.md` §2.1 commentary, and the
+  release documentation required by `docs/planning/implementation-plan.md` M9.
 
 ### ACK-19 — State the invariant as a hypothesis under test
 
@@ -407,8 +407,8 @@ better or worse.
 This does not soften the rule. The system still enforces it deterministically.
 It stops the project asserting an educational outcome it has not measured.
 
-- **Destination:** `SPECIFICATION.md` §2.1 and §2.3; `README.md`;
-  `IMPLEMENTATION-PLAN.md` M0 and D-08.
+- **Destination:** `docs/product/specification.md` §2.1 and §2.3; `README.md`;
+  `docs/planning/implementation-plan.md` M0 and D-08.
 
 ### ACK-20 — Freeze the normative surface until M0 evidence exists
 
@@ -420,7 +420,7 @@ should be limited to the items in this document and to corrections. New
 subjects, languages, roles, modalities, tools, and deployment types remain gated
 behind their own evidence, as delivery principle 10 already requires.
 
-- **Destination:** `IMPLEMENTATION-PLAN.md` §4 and M0.
+- **Destination:** `docs/planning/implementation-plan.md` §4 and M0.
 
 ## Traceability
 
@@ -452,7 +452,7 @@ behind their own evidence, as delivery principle 10 already requires.
 ## Not adopted
 
 Recorded here so the two documents interlock. The reasoning is in
-[`REBUTTAL.md`](./REBUTTAL.md).
+[`docs/review/rebuttal.md`](./rebuttal.md).
 
 | Proposal | Position |
 | --- | --- |
@@ -465,7 +465,7 @@ Recorded here so the two documents interlock. The reasoning is in
 ## What this does not resolve
 
 Adopting twenty items does not answer the four open problems named at the end of
-[`REBUTTAL.md`](./REBUTTAL.md): the educational hypothesis is unproven, the
+[`docs/review/rebuttal.md`](./rebuttal.md): the educational hypothesis is unproven, the
 support precondition may not hold where the product is most needed, the
 single-guardian safeguarding gap is disclosed rather than closed, and precision
 at the boundary is unmeasured. ACK-12 and ACK-19 make two of those measurable.

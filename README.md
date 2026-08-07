@@ -4,9 +4,18 @@ _An AI Agent whose flame can flash back, flare sideways, or bound ahead, but nev
 
 <p align="center">
   <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/curriculum-flame/main/CURRICULUM-FLAME.png" alt="Curriculum Orbit" width="320">
+    <img src="docs/assets/curriculum-flame.png" alt="Curriculum Orbit" width="320">
   </picture>
 </p>
+
+## Documentation
+
+- [Product idea](docs/product/idea.md)
+- [Software product specification](docs/product/specification.md)
+- [Implementation plan](docs/planning/implementation-plan.md)
+- [Brainstorming and research notes](docs/research/brainstorm.md)
+- [Critique, rebuttal, and acknowledged feedback](docs/review/)
+- [Design transcripts](docs/design/transcripts/)
 
 ### The Meaning Behind the Logo
 

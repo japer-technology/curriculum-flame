@@ -1,7 +1,7 @@
 # Brainstorm: Keep the Wonder, Protect the Learning
 
-This is a non-normative companion to [`IDEA.md`](./IDEA.md) and
-[`SPECIFICATION.md`](./SPECIFICATION.md). It explores product directions,
+This is a non-normative companion to [`docs/product/idea.md`](../product/idea.md) and
+[`docs/product/specification.md`](../product/specification.md). It explores product directions,
 questions, risks, and experiments. It does not replace the specification.
 
 ## The opportunity

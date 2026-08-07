@@ -1,7 +1,7 @@
-# Rebuttal: A Response to `CRITIQUE.md`
+# Rebuttal: A Response to `docs/review/critique.md`
 
-This document answers [`CRITIQUE.md`](./CRITIQUE.md). It is a companion to
-[`ACKNOWLEDGED.md`](./ACKNOWLEDGED.md), which records the critique's points that
+This document answers [`docs/review/critique.md`](./critique.md). It is a companion to
+[`docs/review/acknowledged.md`](./acknowledged.md), which records the critique's points that
 the project accepts and where each one will be incorporated.
 
 The two documents divide the work deliberately. This one argues. That one
@@ -15,10 +15,10 @@ hardest problem: a curriculum outcome is a description of expected learning, not
 a boundary that a classifier can trace. Nothing below disputes that.
 
 The disagreement is narrower and mostly about **standing**. The critique is
-written as though the repository consisted of [`IDEA.md`](./IDEA.md) and
-[`SPECIFICATION.md`](./SPECIFICATION.md) alone. Roughly two thirds of its
-recommendations already exist in [`BRAINSTORM.md`](./BRAINSTORM.md) and
-[`IMPLEMENTATION-PLAN.md`](./IMPLEMENTATION-PLAN.md), in several cases stated
+written as though the repository consisted of [`docs/product/idea.md`](../product/idea.md) and
+[`docs/product/specification.md`](../product/specification.md) alone. Roughly two thirds of its
+recommendations already exist in [`docs/research/brainstorm.md`](../research/brainstorm.md) and
+[`docs/planning/implementation-plan.md`](../planning/implementation-plan.md), in several cases stated
 more sharply, with a named owner, a decision record, or a release consequence
 attached. Presenting those as unaddressed weaknesses misdescribes the project's
 position and, more importantly, wastes the critique's leverage: an outside
@@ -28,7 +28,7 @@ thought of, and that contribution is buried here under restatement.
 So this rebuttal does three things. It shows where the repository already holds
 the position the critique recommends. It contests four claims on substance. It
 identifies where the critique is right in a way the project had not reached, and
-hands those to `ACKNOWLEDGED.md`.
+hands those to `docs/review/acknowledged.md`.
 
 ## Summary of the response
 
@@ -110,7 +110,7 @@ chat if enforcement cannot pass.”
 
 The critique asks for creative writing, world-building, revision, future-topic
 exploration, AI literacy, simulations, question parking, and curiosity shelves.
-Every one of those appears in `BRAINSTORM.md`, most of them as named features
+Every one of those appears in `docs/research/brainstorm.md`, most of them as named features
 with design detail. The project also attaches something the critique does not
 propose: a pre-pilot **go/no-go threshold** on useful permitted answers and
 redirect continuation, whose failure pauses rollout. An aspiration to be
@@ -170,7 +170,7 @@ of unimportant. It is optional in the sense that the safety argument must not
 depend on its completeness.
 
 What the critique is right about, and what is conceded in
-[`ACKNOWLEDGED.md`](./ACKNOWLEDGED.md), is that the relationship fields the MVP
+[`docs/review/acknowledged.md`](./acknowledged.md), is that the relationship fields the MVP
 *does* ship — `prerequisite_ids` and `successor_ids` — currently carry no
 provenance, review status, confidence, effective dates, or challenge procedure.
 Hand-authored edges are still policy-relevant data and deserve the governance
@@ -210,7 +210,7 @@ equal to the text-only MVP.
 
 Arguing against a capability the project has already refused is not a critique;
 it is a coincidence of agreement. But the instinct behind it detected something
-real, and that is worth crediting: [`IDEA.md`](./IDEA.md) section 8 presents a
+real, and that is worth crediting: [`docs/product/idea.md`](../product/idea.md) section 8 presents a
 tool table with defaults such as “Calculator: Allowed” and “Code execution:
 Sandboxed,” which reads like a near-term commitment and contradicts the
 specification's total deferral. That inconsistency is a genuine defect in the
@@ -233,7 +233,7 @@ deterministic system-owned boundary response” — a narrow vertical prototype 
 proves the trust boundary before any model is involved.
 
 Where the critique lands a real hit is not on the plan but on the **shopfront**.
-A reader arriving at [`README.md`](./README.md) finds a meditation on the logo,
+A reader arriving at [`README.md`](../../README.md) finds a meditation on the logo,
 not a statement that this is a pre-implementation design repository with no
 code, unvalidated educational assumptions, and a deliberately narrow first
 scope. The detail *can* create false confidence, exactly as the critique says —
@@ -244,7 +244,7 @@ built. That is accepted.
 ## Where the critique is right and had not been reached
 
 Six items are genuinely additive. They are specified for incorporation in
-[`ACKNOWLEDGED.md`](./ACKNOWLEDGED.md) and summarised here so the argument and
+[`docs/review/acknowledged.md`](./acknowledged.md) and summarised here so the argument and
 the concession sit in the same document.
 
 1. **A model adapter contract.** The project is model-independent in practice —
@@ -299,7 +299,7 @@ imply misconduct from an uncertain classification.”
 The project agrees, and has already located the offending rule rather than the
 principle. The specification currently escalates to guardian review on a third
 related block within a fixed window even where no circumvention evidence exists.
-`BRAINSTORM.md` names this, argues that repetition alone may vary a neutral
+`docs/research/brainstorm.md` names this, argues that repetition alone may vary a neutral
 explanation but must not by itself trigger review or lock escalation, and flags
 its particular cost for younger children, multilingual learners, and children
 whose disability or anxiety affects repeated questioning. The delivery plan
@@ -359,7 +359,7 @@ answer is an honest entrance and an evidence-first milestone, not a slower plan.
 What the critique gets right is worth more than what it restates. Six additive
 items, two concessions made inside the disagreements above, three framing
 corrections, and a sharper account of what the project has not proven are now
-recorded in [`ACKNOWLEDGED.md`](./ACKNOWLEDGED.md) with a destination for each.
+recorded in [`docs/review/acknowledged.md`](./acknowledged.md) with a destination for each.
 The disagreements are offered in the same spirit: the boundary between a learner
 and a capable model is worth arguing about precisely, because a vague version of
 it will protect nothing and permit nothing.
