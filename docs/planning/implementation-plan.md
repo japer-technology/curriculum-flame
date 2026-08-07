@@ -5,11 +5,11 @@
 This document turns the repository's product intent into an ordered delivery plan.
 It uses the sources in this order:
 
-1. [`SPECIFICATION.md`](./SPECIFICATION.md) is normative and takes precedence for
+1. [`docs/product/specification.md`](../product/specification.md) is normative and takes precedence for
    the MVP.
-2. [`IDEA.md`](./IDEA.md) defines the broader product intent and target
+2. [`docs/product/idea.md`](../product/idea.md) defines the broader product intent and target
    capabilities.
-3. [`BRAINSTORM.md`](./BRAINSTORM.md) supplies non-normative risks, experiments,
+3. [`docs/research/brainstorm.md`](../research/brainstorm.md) supplies non-normative risks, experiments,
    experience improvements, and questions that must be resolved explicitly.
 
 No implementation shortcut, model behaviour, usability feature, or operational

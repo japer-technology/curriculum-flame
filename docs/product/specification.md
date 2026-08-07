@@ -5,7 +5,7 @@
 | Field | Value |
 | --- | --- |
 | Status | Initial specification |
-| Source of intent | [`IDEA.md`](./IDEA.md) |
+| Source of intent | [`idea.md`](./idea.md) |
 | Initial release | Minimum viable product (MVP) |
 | Default deployment | Local and offline |
 
@@ -16,7 +16,7 @@ normative. Requirements marked **MVP** apply to the initial release. Requirement
 marked **Target** describe the intended product after the MVP and are not release
 gates for the MVP.
 
-The specification resolves scope and precedence where `IDEA.md` describes both
+The specification resolves scope and precedence where `idea.md` describes both
 the complete product and a narrower MVP. If the documents conflict during MVP
 implementation, this specification takes precedence.
 
@@ -1411,7 +1411,7 @@ Each added modality, tool, role, notification path, or deployment boundary MUST
 receive its own threat analysis and MUST preserve the core invariant, local
 defaults, deterministic policy enforcement, and pre/post validation.
 
-## 23. Traceability to `IDEA.md`
+## 23. Traceability to `idea.md`
 
 | Idea area | Specification sections |
 | --- | --- |
