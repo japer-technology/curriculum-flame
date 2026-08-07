@@ -8,6 +8,15 @@ _An AI Agent whose flame can flash back, flare sideways, or bound ahead, but nev
   </picture>
 </p>
 
+## Documentation
+
+- [Product idea](docs/product/idea.md)
+- [Software product specification](docs/product/specification.md)
+- [Implementation plan](docs/planning/implementation-plan.md)
+- [Brainstorming and research notes](docs/research/brainstorm.md)
+- [Critique, rebuttal, and acknowledged feedback](docs/review/)
+- [Design transcripts](docs/design/transcripts/)
+
 ### The Meaning Behind the Logo
 
 The flame represents the enduring spark of learning, the point where curiosity becomes understanding and knowledge begins to grow.
